@@ -18,10 +18,5 @@
         "noEmit": true,
         "watch": true,
         "preserveWatchOutput": true
-    },
-    "include": ["./src/"],
-    "exclude": [
-        "**/node_modules",
-        "**/.*/"
-    ]
+    }
 }
