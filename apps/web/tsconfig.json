@@ -1,0 +1,11 @@
+{
+    "extends": "@repo/config/typescript/tsconfig.browser.json",
+    "compilerOptions": {
+        "rootDir": ".",
+    },
+    "include": ["./src/"],
+    "exclude": [
+        "**/node_modules",
+        "**/.*/"
+    ]
+}

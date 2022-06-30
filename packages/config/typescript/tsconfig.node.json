@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "TSConfig Node",
+    "compilerOptions": {
+        "module": "esnext",
+        "moduleResolution": "node",
+        "target": "esnext",
+
+        "rootDir": "./src/",
+        "composite": true,
+        "forceConsistentCasingInFileNames": true,
+
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+
+        "strict": true,
+        "noEmit": true,
+        "watch": true,
+        "preserveWatchOutput": true
+    },
+    "include": ["./src/"],
+    "exclude": [
+        "**/node_modules",
+        "**/.*/"
+    ]
+}

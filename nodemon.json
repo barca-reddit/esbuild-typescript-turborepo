@@ -1,0 +1,12 @@
+{
+    "watch": [
+        "/apps/**/*.ts",
+        "/packages/**/*.ts"
+    ],
+    "ignore": [
+        "/cache",
+        "/node_modules"
+    ],
+    "ext": "ts",
+    "verbose": false
+}

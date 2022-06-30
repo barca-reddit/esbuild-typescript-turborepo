@@ -1,0 +1,17 @@
+{
+    "name": "@repo/web",
+    "author": "decho",
+    "version": "1.0.0",
+    "description": "Web frontend",
+    "license": "ISC",
+    "scripts": {
+        "build": "rm -rf out && node esbuild.mjs",
+        "watch": "nodemon out/index.js"
+    },
+    "devDependencies": {
+        "@repo/config": "*",
+        "@repo/mongodb": "*",
+        "@typescript-eslint/eslint-plugin": "^5.30.0",
+        "@typescript-eslint/parser": "^5.30.0"
+    }
+}
