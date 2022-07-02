@@ -5,6 +5,9 @@
             "dependsOn": ["^build"],
             "outputs": ["out/**"],
             "cache": true
+        },
+        "lint": {
+            "outputs": []
         }
     }
 }

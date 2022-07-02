@@ -1,7 +1,8 @@
 {
     "extends": "@repo/config/typescript/tsconfig.browser.json",
     "compilerOptions": {
-        "rootDir": ".",
+        "rootDir": "./src/",
+        "outDir": "./out/"
     },
     "include": ["./src/"],
     "exclude": [

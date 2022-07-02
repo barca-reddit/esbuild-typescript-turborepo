@@ -1,0 +1,1 @@
+export const main = 'hello from the shared package';

@@ -1,6 +1,5 @@
 import { build } from 'esbuild';
 import fg from 'fast-glob';
-import { rmOutDirPlugin } from './rm-out-dir.mjs';
 
 export const buildNode = async ({ ...args }) => {
     await build({
@@ -8,11 +7,11 @@ export const buildNode = async ({ ...args }) => {
         platform: 'node',
         target: 'node16',
         format: 'esm',
-        bundle: false,
         outdir: './out',
         sourcemap: false,
         logLevel: 'info',
-        plugins: [rmOutDirPlugin()],
         ...args
     })
 };
+
+await buildNode({});

@@ -1,12 +1,8 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
-    "display": "TSConfig Browser",
     "compilerOptions": {
         "module": "CommonJS",
         "target": "ESNext",
 
-        "rootDir": "./src/",
-        "composite": true,
         "forceConsistentCasingInFileNames": true,
 
         "esModuleInterop": true,

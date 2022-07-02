@@ -9,9 +9,8 @@ export const buildBrowser = async ({ ...args }) => {
         format: 'iife',
         bundle: true,
         outdir: './out',
-        outbase: 'src',
         sourcemap: false,
         logLevel: 'info',
-        ...args
+        ...args,
     })
 };

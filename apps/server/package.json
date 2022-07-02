@@ -1,8 +1,8 @@
 {
-    "name": "@repo/web",
+    "name": "@repo/server",
     "author": "decho",
     "version": "1.0.0",
-    "description": "An example web application (browser)",
+    "description": "An example server application (nodejs)",
     "license": "ISC",
     "type": "module",
     "scripts": {
@@ -16,6 +16,7 @@
     },
     "devDependencies": {
         "@repo/config": "*",
+        "@types/node": "^18.0.0",
         "@typescript-eslint/eslint-plugin": "^5.30.0",
         "@typescript-eslint/parser": "^5.30.0"
     }

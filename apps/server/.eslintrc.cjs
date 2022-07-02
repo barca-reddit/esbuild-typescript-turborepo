@@ -12,6 +12,6 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: ["./tsconfig.json"],
     },
-    ignorePatterns: ["/out/**/*", "**/*.js", "**/*.mjs"],
+    ignorePatterns: ["*.*", "!src/**/*"],
     ...require("@repo/config/eslint/eslint-default"),
 };

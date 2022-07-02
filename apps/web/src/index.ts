@@ -1,4 +1,6 @@
-console.log('web/src/index');
-setInterval(() => { }, 1 << 30);
+import { getTitle, getURL } from '@repo/shared/web';
 
-export { };
+if (typeof window !== 'undefined') {
+    console.log(`Page title: ${getTitle()}`);
+    console.log(`Page URL: ${getURL()}`);
+}

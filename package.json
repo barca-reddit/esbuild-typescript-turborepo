@@ -5,14 +5,20 @@
     "version": "1.0.0",
     "description": "ESBuild + TypeScript + Turborepo + ESLint Monorepo starter template.",
     "license": "ISC",
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=7.0.0"
+    },
     "workspaces": [
         "apps/*",
         "packages/*"
     ],
     "scripts": {
-        "build": "npx turbo run build --cache-dir='./cache' --parallel",
-        "serve": "npm run watch --workspace=@repo/admin & npm run watch --workspace=@repo/web",
-        "watch": "rm -rf cache && npx nodemon --exec 'npm run build && npm run serve'"
+        "build": "npx turbo run build --cache-dir='./cache'",
+        "serve": "npm run watch --workspace=@repo/server & npm run watch --workspace=@repo/web",
+        "check": "npm run check --workspace=@repo/shared & npm run check --workspace=@repo/server & npm run check --workspace=@repo/web",
+        "watch": "rm -rf cache && npx nodemon --exec 'npm run build && npm run serve & npm run check'",
+        "lint": "npx turbo run lint"
     },
     "devDependencies": {
         "nodemon": "^2.0.18",
