@@ -148,3 +148,5 @@ This repository won't work out of the box on Windows system (unless you are usin
 ## Useful resources:
 
 -   [Video: Turborepo Tutorial | Part 1 - Typescript, Eslint, Tailwind, Husky shared config setup in a Monorepo](https://www.youtube.com/watch?v=YQLw5kJ1yrQ) by Leo Roese.
+
+-   [typescript-subpath-exports-workaround](https://github.com/teppeis/typescript-subpath-exports-workaround) by Teppei Sato.
