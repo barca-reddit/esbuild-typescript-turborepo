@@ -141,10 +141,6 @@ If the `.cache` directories become annoying, you can just hide them in VSCode, c
 }
 ```
 
-### Windows Users
-
-This repository won't work out of the box on Windows system (unless you are using WSL or something similar), because the watch script inside of project root uses the `rm` command to clean turborepo's `cache` directory between builds. You can remove `rm -rf cache &&` and write your own implementation.
-
 ## Useful resources:
 
 -   [Video: Turborepo Tutorial | Part 1 - Typescript, Eslint, Tailwind, Husky shared config setup in a Monorepo](https://www.youtube.com/watch?v=YQLw5kJ1yrQ) by Leo Roese.
