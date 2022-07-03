@@ -1,5 +1,8 @@
 import { createServer } from 'http';
+import { main } from '@repo/shared';
 import { getVersion, getPlatform } from '@repo/shared/server';
+
+console.log(main);
 
 const server = createServer((req, res) => {
     res

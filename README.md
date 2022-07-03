@@ -51,7 +51,7 @@ To create a shared package and import it somewhere else in your monorepo, edit t
 
 The `exports` field is there to serve plain javascript imports and it should point out to an index (main) file in your compiled `out` directory. The `import` nested key is a ["conditional export"](https://nodejs.org/docs/latest-v16.x/api/packages.html#conditional-exports).
 
-The `typesVersions` is there to make TypeScript happy and should point out to a file that exports other files (an index):
+The `typesVersions` is there to make TypeScript happy and should point out to a file that exports other files (an index). This allows you to do the following:
 
 ```ts
 // foo.ts
@@ -63,6 +63,16 @@ export * from "./bar.js";
 
 // inside some other package
 import { foo } from "@repo/shared";
+```
+
+Don't forget to add the package you're exporting as a dependency to the package you're importing it to:
+
+```json
+// package.json
+{
+    // ...
+    "dependencies": { "@repo/shared": "*" }
+}
 ```
 
 For more advanced usages, you can also use ["subpath exports"](https://nodejs.org/docs/latest-v16.x/api/packages.html#subpath-exports).
@@ -133,7 +143,7 @@ If the `.cache` directories become annoying, you can just hide them in VSCode, c
 
 ### Windows Users
 
-This repository won't work out of the box on Windows system (unless you are using WSL or something similar), because the watch script inside of project root uses the `rm` to clean turborepo's `cache` directory between builds. You can remove `rm -rf cache &&` and write your own implementation.
+This repository won't work out of the box on Windows system (unless you are using WSL or something similar), because the watch script inside of project root uses the `rm` command to clean turborepo's `cache` directory between builds. You can remove `rm -rf cache &&` and write your own implementation.
 
 ## Useful resources:
 
