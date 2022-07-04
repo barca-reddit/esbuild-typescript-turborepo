@@ -141,6 +141,39 @@ If the `.cache` directories become annoying, you can just hide them in VSCode, c
 }
 ```
 
+### Version mismatches
+
+You can quickly check whether your package dependencies are in sync, e.g, `@repo/a` and `@repo/b` are different versions of the same library.
+
+```json
+// package.json (repo a)
+{
+    "name": "repo/a",
+    "dependencies": {
+        "foo": "^1.0.0"
+    }
+}
+// package.json (repo b)
+{
+    "name": "repo/b",
+    "dependencies": {
+        "foo": "^2.0.0"
+    }
+}
+```
+
+```sh
+npm run mismatch
+
+Error: Found version mismatch for the following package:
+
+foo - versions: ^1.0.0, ^2.0.0
+- apps/package-a/package.json (@repo/a) - ^1.0.0
+- apps/package-b/package.json (@repo/b) - ^2.0.0
+```
+
+This is just a quick and dirty solution that will only report mismatches but won't fix them for you. For more advanced solutions, check out [syncpack](https://github.com/JamieMason/syncpack).
+
 ## Useful resources:
 
 -   [Video: Turborepo Tutorial | Part 1 - Typescript, Eslint, Tailwind, Husky shared config setup in a Monorepo](https://www.youtube.com/watch?v=YQLw5kJ1yrQ) by Leo Roese.

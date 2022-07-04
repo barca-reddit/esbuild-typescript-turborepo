@@ -18,7 +18,8 @@
         "serve": "npm run watch --workspace=@repo/server & npm run watch --workspace=@repo/web",
         "check": "npm run check --workspace=@repo/shared & npm run check --workspace=@repo/server & npm run check --workspace=@repo/web",
         "watch": "npx rimraf ./cache && npx nodemon --exec 'npm run build && npm run serve & npm run check'",
-        "lint": "npx turbo run lint"
+        "lint": "npx turbo run lint",
+        "mismatch": "node packages/config/util/pkg-mismatch.mjs"
     },
     "devDependencies": {
         "nodemon": "^2.0.18",
