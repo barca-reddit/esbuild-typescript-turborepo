@@ -18,9 +18,15 @@
     },
     "typesVersions": {
         "*": {
-            "*": ["./src/main.ts"],
-            "server": ["./src/server/index.ts"],
-            "web": ["./src/web/index.ts"]
+            "*": [
+                "./src/main.ts"
+            ],
+            "server": [
+                "./src/server/index.ts"
+            ],
+            "web": [
+                "./src/web/index.ts"
+            ]
         }
     },
     "scripts": {
@@ -30,8 +36,8 @@
     },
     "devDependencies": {
         "@repo/config": "*",
-        "@types/node": "^18.0.0",
-        "@typescript-eslint/eslint-plugin": "^5.30.0",
-        "@typescript-eslint/parser": "^5.30.0"
+        "@types/node": "^18.11.9",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0"
     }
 }

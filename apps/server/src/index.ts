@@ -10,7 +10,8 @@ const server = createServer((req, res) => {
         .end(
             JSON.stringify({
                 node: getVersion(),
-                platform: getPlatform()
+                platform: getPlatform(),
+                repository: 'https://github.com/barca-reddit/esbuild-typescript-turborepo'
             }),
             'utf-8'
         );

@@ -1,5 +1,9 @@
 # ESBuild TypeScript Turborepo Monorepo starter/example
 
+## Update November 2022:
+
+-   Added support for React with an example app in `apps/react`.
+
 ## Details:
 
 This is an example monorepository using ESBuild for it's near-instantaneous build times and Turborepo for it's caching capabilities. It's pre-configured for TypeScript (2 different configurations for browser and for node) and ESLint for linting.

@@ -15,8 +15,8 @@
     ],
     "scripts": {
         "build": "npx turbo run build --cache-dir='./cache'",
-        "serve": "npm run watch --workspace=@repo/server & npm run watch --workspace=@repo/web",
-        "check": "npm run check --workspace=@repo/shared & npm run check --workspace=@repo/server & npm run check --workspace=@repo/web",
+        "serve": "npm run watch --workspace=@repo/server",
+        "check": "npm run check --workspace=@repo/shared & npm run check --workspace=@repo/server & npm run check --workspace=@repo/web & npm run check --workspace=@repo/react",
         "watch": "npx rimraf ./cache && npx nodemon --exec 'npm run build && npm run serve & npm run check'",
         "lint": "npx turbo run lint",
         "mismatch": "node packages/config/util/pkg-mismatch.mjs"

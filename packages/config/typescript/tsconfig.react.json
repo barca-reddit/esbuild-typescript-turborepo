@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "target": "ESNext",
+
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+
+        "watch": true,
+        "preserveWatchOutput": true,
+        "noEmit": true,
+
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+    }
+}

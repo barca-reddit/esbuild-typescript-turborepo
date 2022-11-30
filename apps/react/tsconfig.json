@@ -1,0 +1,12 @@
+{
+    "extends": "@repo/config/typescript/tsconfig.react.json",
+    "compilerOptions": {
+        "rootDir": "./src/",
+        "outDir": "./out/"
+    },
+    "include": ["./src/"],
+    "exclude": [
+        "**/node_modules",
+        "**/.*/"
+    ]
+}

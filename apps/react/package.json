@@ -1,0 +1,27 @@
+{
+    "name": "@repo/react",
+    "author": "decho",
+    "version": "1.0.0",
+    "description": "An example react application (browser)",
+    "license": "ISC",
+    "type": "module",
+    "scripts": {
+        "build": "node esbuild.js",
+        "check": "npx tsc",
+        "lint": "npx eslint src/**/*.ts"
+    },
+    "dependencies": {
+        "@repo/shared": "*",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@repo/config": "*",
+        "@types/react": "^18.0.25",
+        "@types/react-dom": "^18.0.9",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0",
+        "eslint-plugin-react": "^7.31.11",
+        "eslint-plugin-react-hooks": "^4.6.0"
+    }
+}
