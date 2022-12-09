@@ -7,26 +7,20 @@
     "type": "module",
     "exports": {
         ".": {
+            "types": "./src/main.ts",
             "import": "./out/main.js"
         },
         "./server": {
+            "types": "./src/server/index.ts",
             "import": "./out/server/index.js"
         },
         "./web": {
+            "types": "./src/web/index.ts",
             "import": "./out/web/index.js"
-        }
-    },
-    "typesVersions": {
-        "*": {
-            "*": [
-                "./src/main.ts"
-            ],
-            "server": [
-                "./src/server/index.ts"
-            ],
-            "web": [
-                "./src/web/index.ts"
-            ]
+        },
+        "./*": {
+            "types": "./src/*.ts",
+            "import": "./out/*.js"
         }
     },
     "scripts": {
@@ -36,8 +30,8 @@
     },
     "devDependencies": {
         "@repo/config": "*",
-        "@types/node": "^18.11.9",
-        "@typescript-eslint/eslint-plugin": "^5.45.0",
-        "@typescript-eslint/parser": "^5.45.0"
+        "@types/node": "^18.11.12",
+        "@typescript-eslint/eslint-plugin": "^5.46.0",
+        "@typescript-eslint/parser": "^5.46.0"
     }
 }

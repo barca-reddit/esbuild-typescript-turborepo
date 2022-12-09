@@ -16,8 +16,8 @@
     },
     "devDependencies": {
         "@repo/config": "*",
-        "@types/node": "^18.11.9",
-        "@typescript-eslint/eslint-plugin": "^5.45.0",
-        "@typescript-eslint/parser": "^5.45.0"
+        "@types/node": "^18.11.12",
+        "@typescript-eslint/eslint-plugin": "^5.46.0",
+        "@typescript-eslint/parser": "^5.46.0"
     }
 }

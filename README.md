@@ -1,5 +1,9 @@
 # ESBuild TypeScript Turborepo Monorepo starter/example
 
+## Update December 2022:
+
+-   The way of exporting/sharing packages has changed. Check the updated [section](#exportingsharing-packages).
+
 ## Update November 2022:
 
 -   Added support for React with an example app in `apps/react`.
@@ -38,35 +42,36 @@ npm run watch
 
 **NB**: <ins>I don't know if this is the best or the accepted way to do this, neither I consider myself an expert, so PR/issues/feedback of any kind is welcome.</ins>
 
+[Previously](https://github.com/barca-reddit/esbuild-typescript-turborepo/tree/0a22bbc5b0652a940caf5d6d45d60edbbebeeea7#exportingsharing-packages) we were making use of `typeVersions` in `package.json` to share code within the monorepository, but that caused some issues. Now, we're making use of `"moduleResolution": "NodeNext"` in `tsconfig.json`, so that makes things easier.
+
 To create a shared package and import it somewhere else in your monorepo, edit the contents of `package.json` of the package you want to export and add the following fields:
 
 ```json
 "exports": {
     ".": {
+        "types": "./src/main.ts",
         "import": "./out/main.js"
-    }
-},
-"typesVersions": {
-    "*": {
-        "*": ["./src/main.ts"]
     }
 }
 ```
 
-The `exports` field is there to serve plain javascript imports and it should point out to an index (main) file in your compiled `out` directory. The `import` nested key is a ["conditional export"](https://nodejs.org/docs/latest-v16.x/api/packages.html#conditional-exports).
+The first part of the `export` object is the path you want to import (details below).
 
-The `typesVersions` is there to make TypeScript happy and should point out to a file that exports other files (an index). This allows you to do the following:
+The `types` key should point out to an index file where all your exports live. For example:
 
 ```ts
-// foo.ts
+// src/main.ts
 export const foo = "foo";
+export const bar = "foo";
+```
 
-// main.ts
-export * from "./foo.js";
-export * from "./bar.js";
+The `import` key should point out to an index (main) file in your compiled `out` directory and it's there to server plain javascript imports.
 
+All of this allows you to do the following:
+
+```ts
 // inside some other package
-import { foo } from "@repo/shared";
+import { foo, bar } from "@repo/shared";
 ```
 
 Don't forget to add the package you're exporting as a dependency to the package you're importing it to:
@@ -79,42 +84,43 @@ Don't forget to add the package you're exporting as a dependency to the package 
 }
 ```
 
-For more advanced usages, you can also use ["subpath exports"](https://nodejs.org/docs/latest-v16.x/api/packages.html#subpath-exports).
+You can also have multiple import paths.
 
 ```json
 "exports": {
     ".": {
+        "types": "./src/main.ts",
         "import": "./out/main.js"
     },
-    "./other": {
-        "import": "./out/other/index.js"
-    }
-},
-"typesVersions": {
-    "*": {
-        "*": ["./src/main.ts"],
-        "other": ["./src/other/index.ts"]
+    "./server": {
+        "types": "./src/server/index.ts",
+        "import": "./out/server/index.js"
+    },
+    "./web": {
+        "types": "./src/web/index.ts",
+        "import": "./out/web/index.js"
     }
 }
 ```
 
-This allows you to do the following:
-
 ```ts
-// src/other/foo.ts
-export const foo = "foo";
-
-// src/other/bar.ts
-export const bar = "bar";
-
-// src/other/index.ts
-export * from "./foo.js";
-export * from "./bar.js";
-
 // inside some other package
-import { foo, bar } from "@repo/shared/other";
-//                                     ^^^^^
+import { foo } from "@repo/shared/server";
+import { bar } from "@repo/shared/web";
 ```
+
+It is also possible to have wildcard exports like this:
+
+```json
+"exports": {
+    "./*": {
+        "types": "./src/*.ts",
+        "import": "./out/*.js"
+    }
+}
+```
+
+But unfortunately TypeScript is unable to find type declarations this way. If you have a solution or tips about this, issues and PRs are welcome!
 
 ## Notes:
 
