@@ -6,6 +6,8 @@
 
         "strict": true,
         "forceConsistentCasingInFileNames": true,
+        "allowUnreachableCode": true,
+
         "esModuleInterop": true,
         "isolatedModules": true,
         "resolveJsonModule": true,

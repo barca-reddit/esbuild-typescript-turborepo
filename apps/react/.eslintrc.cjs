@@ -38,6 +38,6 @@ module.exports = {
     rules: {
         "react/react-in-jsx-scope": 0,
         "react/jsx-uses-react": 0,
-        ...require("@repo/config/eslint/eslint-default").rules
+        ...require("@repo/config/eslint").rules
     }
 };

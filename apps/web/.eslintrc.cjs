@@ -13,5 +13,5 @@ module.exports = {
         project: ["./tsconfig.json"],
     },
     ignorePatterns: ["*.*", "!src/**/*"],
-    ...require("@repo/config/eslint/eslint-default"),
+    ...require("@repo/config/eslint")
 };

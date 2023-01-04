@@ -1,6 +1,6 @@
 import { copyFile } from 'fs/promises';
 import { constants } from 'fs';
-import { buildReact } from '@repo/config/esbuild/build.react.mjs';
+import { buildReact } from '@repo/config/esbuild';
 
 const config = {
     development: {

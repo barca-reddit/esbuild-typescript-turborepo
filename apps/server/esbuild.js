@@ -1,2 +1,2 @@
-import { buildNode } from '@repo/config/esbuild/build-node.mjs';
+import { buildNode } from '@repo/config/esbuild'
 await buildNode({});

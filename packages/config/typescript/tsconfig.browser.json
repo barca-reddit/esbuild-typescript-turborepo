@@ -5,6 +5,7 @@
         "target": "ESNext",
 
         "forceConsistentCasingInFileNames": true,
+        "allowUnreachableCode": true,
 
         "esModuleInterop": true,
         "isolatedModules": true,

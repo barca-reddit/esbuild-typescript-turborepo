@@ -4,13 +4,15 @@
     "version": "1.0.0",
     "description": "Configurations",
     "license": "ISC",
-    "files": [
-        "esbuild/build-browser.mjs",
-        "esbuild/build-node.mjs",
-        "typescript/tsconfig.browser.json",
-        "typescript/tsconfig.node.json",
-        "eslint/eslint-default.js"
-    ],
+    "type": "module",
+    "exports": {
+        "./esbuild": {
+            "import": "./esbuild/index.js"
+        },
+        "./eslint": {
+            "require": "./eslint/eslint-default.cjs"
+        }
+    },
     "devDependencies": {
         "esbuild": "^0.16.12",
         "fast-glob": "^3.2.12"
