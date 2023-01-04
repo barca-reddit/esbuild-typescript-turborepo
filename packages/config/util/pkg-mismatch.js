@@ -24,7 +24,7 @@ class Dependencies {
     }
 
     async getAll() {
-        for (const pkgPath of await fg('**/package.json', { ignore: 'node_modules/**' })) {
+        for (const pkgPath of await fg('**/package.json', { ignore: '**/node_modules/**' })) {
             const { name, dependencies, devDependencies, peerDependencies } = JSON.parse(
                 await readFile(pkgPath, 'utf-8')
             );
