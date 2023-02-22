@@ -1,6 +1,6 @@
 import { copyFile } from 'fs/promises';
 import { constants } from 'fs';
-import { buildReact } from '@repo/config/esbuild';
+import { buildReact, buildTailwind } from '@repo/config/esbuild';
 
 const config = {
     development: {
@@ -15,11 +15,15 @@ const config = {
     }
 }
 
-await buildReact({
-    ...config.development
-});
-await copyFile(
-    './src/index.html',
-    './out/index.html',
-    constants.COPYFILE_FICLONE
-);
+await Promise.all([
+    await buildReact({
+        ...config.development,
+        outfile: './out/bundle.js'
+    }),
+    await buildTailwind({}),
+    await copyFile(
+        './src/index.html',
+        './out/index.html',
+        constants.COPYFILE_FICLONE
+    )
+])

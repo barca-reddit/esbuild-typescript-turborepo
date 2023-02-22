@@ -1,0 +1,17 @@
+body {
+    @apply flex flex-col justify-center items-center h-screen w-screen font-ubuntu;
+    @apply text-slate-200 bg-gradient-to-b from-slate-800 to-slate-900;
+}
+
+#root {
+    @apply flex flex-col justify-center items-center gap-8 w-[90vw] min-h-[90vh] xl:w-[80vw] xl:min-h-[80vh];
+    @apply bg-slate-800 rounded-md border border-slate-700;
+}
+
+h1 {
+    @apply text-3xl font-bold tracking-tight my-4;
+}
+
+img.react-logo {
+    @apply w-28 h-28 animate-[spin_8s_linear_infinite];
+}

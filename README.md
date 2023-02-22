@@ -1,5 +1,9 @@
 # ESBuild TypeScript Turborepo Monorepo starter/example
 
+## Update February 2023:
+
+-   Added TailwindCSS to the React package
+
 ## Update December 2022:
 
 -   The way of exporting/sharing packages has changed. Check the updated [section](#exportingsharing-packages).

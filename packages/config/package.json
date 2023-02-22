@@ -14,7 +14,8 @@
         }
     },
     "devDependencies": {
-        "esbuild": "^0.16.12",
+        "esbuild": "^0.17.10",
+        "esbuild-postcss": "^0.0.4",
         "fast-glob": "^3.2.12"
     }
 }
