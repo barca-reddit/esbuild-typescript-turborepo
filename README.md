@@ -1,5 +1,36 @@
 # ESBuild TypeScript Turborepo Monorepo starter/example
 
+## Update April 2023:
+
+-   Typescript has been updated to 5.0. This means you now have to export your common tsconfig files from `package.json` in case you want to extend other configurations elsewhere in your repository.
+
+```js
+// package.json (@repo/config)
+{
+    "name": "@repo/config",
+    "exports": {
+        "./typescript/*.json": "./typescript/*.json"
+    }
+}
+
+// tsconfig.json (@repo/server)
+{
+    "extends": "@repo/config/typescript/tsconfig.node.json",
+}
+```
+
+❗ If you are using a version of VSCode that ships with TypeScript <5.0.3, you need to change the version of TypeScript VSCode uses to 5.0.3 or higher, which [fixes this bug](https://github.com/microsoft/TypeScript/issues/53314). This monorepo currently comes with 5.0.4 so you can use that version instead.
+
+The easiest way to take care of this problem is by creating a `.vscode` directory in the project root, and then add the following configuration to `settings.json`:
+
+```js
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+}
+```
+
+or open the command palette (ctrl+shift+p) and choose > "Typescript: Select typescript version" > "Use workspace version (5.0.4)".
+
 ## Update February 2023:
 
 -   Added TailwindCSS to the React package

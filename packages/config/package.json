@@ -11,10 +11,11 @@
         },
         "./eslint": {
             "require": "./eslint/eslint-default.cjs"
-        }
+        },
+        "./typescript/*.json": "./typescript/*.json"
     },
     "devDependencies": {
-        "esbuild": "^0.17.10",
+        "esbuild": "^0.17.15",
         "esbuild-postcss": "^0.0.4",
         "fast-glob": "^3.2.12"
     }
