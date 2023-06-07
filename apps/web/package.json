@@ -7,7 +7,7 @@
     "type": "module",
     "scripts": {
         "build": "node esbuild.js",
-        "check": "npx tsc",
+        "check": "npx tsc --watch",
         "watch": "nodemon out/index.js",
         "lint": "npx eslint src/**/*.ts"
     },

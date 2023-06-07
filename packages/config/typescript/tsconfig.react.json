@@ -12,7 +12,6 @@
         "isolatedModules": true,
         "resolveJsonModule": true,
 
-        "watch": true,
         "preserveWatchOutput": true,
         "noEmit": true,
 
@@ -20,10 +19,6 @@
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
 
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "esnext"
-        ],
+        "lib": ["dom", "dom.iterable", "esnext"]
     }
 }
