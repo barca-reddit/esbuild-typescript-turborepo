@@ -18,7 +18,7 @@ const config = {
 await Promise.all([
     await buildReact({
         ...config.development,
-        outfile: './out/bundle.js'
+        outfile: './out/index.js'
     }),
     await buildTailwind({}),
     await copyFile(
