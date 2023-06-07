@@ -15,7 +15,7 @@
         "./typescript/*.json": "./typescript/*.json"
     },
     "devDependencies": {
-        "esbuild": "^0.17.15",
+        "esbuild": "^0.17.19",
         "esbuild-postcss": "^0.0.4",
         "fast-glob": "^3.2.12"
     }
