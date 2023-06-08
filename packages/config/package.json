@@ -9,8 +9,8 @@
         "./esbuild": {
             "import": "./esbuild/index.js"
         },
-        "./eslint": {
-            "require": "./eslint/eslint-default.cjs"
+        "./eslint/*.cjs": {
+            "require": "./eslint/*.cjs"
         },
         "./typescript/*.json": "./typescript/*.json"
     },

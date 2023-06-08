@@ -13,5 +13,8 @@ module.exports = {
         project: ["./tsconfig.json"],
     },
     ignorePatterns: ["*.*", "!src/**/*"],
-    ...require("@repo/config/eslint/eslint-default"),
+    rules: {
+        ...require("@repo/config/eslint/rules-default.cjs"),
+        ...require("@repo/config/eslint/rules-typescript.cjs"),
+    }
 };

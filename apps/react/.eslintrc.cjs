@@ -36,8 +36,8 @@ module.exports = {
     },
     ignorePatterns: ["*.*", "!src/**/*"],
     rules: {
-        "react/react-in-jsx-scope": 0,
-        "react/jsx-uses-react": 0,
-        ...require("@repo/config/eslint").rules
+        ...require("@repo/config/eslint/rules-default.cjs"),
+        ...require("@repo/config/eslint/rules-typescript.cjs"),
+        ...require("@repo/config/eslint/rules-react.cjs"),
     }
-};
+}; 
